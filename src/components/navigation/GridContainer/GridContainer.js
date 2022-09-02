@@ -5,10 +5,11 @@ import Card from '../../Card/Card'
 
 const GridContainer = (props) => {
   return (
-    <Container maxWidth="sm" sx={{ mt: 2 }}>
+    <Container maxWidth="md" sx={{ mt: 3 }}>
       <Grid
         container
-        spacing={2}
+        spacing={3}
+        columnSpacing={4}
         sx={{
           alignItems: 'center',
           flexDirection: { xs: 'column', md: 'row' },
@@ -19,19 +20,19 @@ const GridContainer = (props) => {
           imgAlt="Muestra Pajaro"
           title="Pajaro de fuego"
           subtitle="Coleccion 2022"
-        ></Card>
+        />
         <Card
           imgSrc="https://nantolin.shopinteligente.com/images/Muestra-Natalia.jpg"
           imgAlt="Muestra Natalia"
           title="Natalia antolin"
           subtitle="Coleccion propia"
-        ></Card>
+        />
         <Card
           imgSrc="https://nantolin.shopinteligente.com/images/Muestra-china.jpg"
           imgAlt="Muestra china"
           title="China Suarez"
           subtitle="Coleccion exclusiva"
-        ></Card>
+        />
       </Grid>
     </Container>
   )

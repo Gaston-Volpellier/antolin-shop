@@ -10,8 +10,8 @@ const Card = (props) => {
         <Box
           component="img"
           sx={{
-            height: 150,
-            borderRadius: '50%',
+            height: 200,
+            borderRadius: '90%',
           }}
           alt={props.imgAlt}
           src={props.imgSrc}
