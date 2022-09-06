@@ -10,10 +10,8 @@ import Profile from './pages/Profile/Profile'
 import { useState } from 'react'
 
 const App = () => {
-  // The light theme is used by default
   const [isDarkTheme, setIsDarkTheme] = useState(true)
 
-  // This function is triggered when the Switch component is toggled
   const changeTheme = () => {
     setIsDarkTheme(!isDarkTheme)
   }
@@ -28,12 +26,12 @@ const App = () => {
         }
       >
         <CssBaseline />
-        <DrawerAppBar theme={isDarkTheme} />
+        <DrawerAppBar isDarkTheme={isDarkTheme} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" exact element={<Profile />} />
         </Routes>
-        <Footer change={changeTheme} theme={isDarkTheme} />
+        <Footer change={changeTheme} isDarkTheme={isDarkTheme} />
       </ThemeProvider>
     </BrowserRouter>
   )

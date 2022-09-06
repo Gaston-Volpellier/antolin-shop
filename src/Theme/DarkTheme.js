@@ -9,7 +9,7 @@ const customDarkTheme = createTheme({
             variant: 'variant1',
           },
           style: {
-            backgroundColor: 'blue',
+            color: 'white',
           },
         },
       ],
@@ -31,6 +31,9 @@ const customDarkTheme = createTheme({
     },
     background: {
       default: '#303030',
+    },
+    variant1: {
+      default: '#fff',
     },
   },
 })

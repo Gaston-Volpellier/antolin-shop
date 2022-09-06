@@ -9,7 +9,7 @@ const customLightTheme = createTheme({
             variant: 'variant1',
           },
           style: {
-            backgroundColor: 'blue',
+            color: 'white',
           },
         },
       ],

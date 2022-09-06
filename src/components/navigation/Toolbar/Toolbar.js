@@ -12,15 +12,34 @@ import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import Logo from '../../../assets/logo.png'
 import LogoWhite from '../../../assets/logo-white.png'
+import { Link } from '@mui/material'
+import './Toolbar.css'
 
 const drawerWidth = 240
-const navItems = ['Home', 'Perfil', 'Historial', 'Calendario', 'Shop']
+const navItems = [
+  {
+    label: 'Home',
+    route: '/',
+  },
+  {
+    label: 'Perfil',
+    route: '/profile',
+  },
+  {
+    label: 'Historial',
+    route: '/history',
+  },
+  {
+    label: 'Calendario',
+    route: '/calendar',
+  },
+  { label: 'Shop', route: 'https://www.shopnantolin.com/' },
+]
 
 function DrawerAppBar(props) {
-  const { window, theme } = props
+  const { window, isDarkTheme } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
@@ -36,15 +55,15 @@ function DrawerAppBar(props) {
             height: 25,
           }}
           alt="Natalia antolin"
-          src={theme ? Logo : LogoWhite}
+          src={isDarkTheme ? LogoWhite : Logo}
         />
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map(({ label, route }) => (
+          <ListItem key={label} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -79,14 +98,21 @@ function DrawerAppBar(props) {
                 height: 35,
               }}
               alt="Natalia antolin"
-              src={theme ? Logo : LogoWhite}
+              src={isDarkTheme ? LogoWhite : Logo}
             />
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
+            {navItems.map(({ label, route }) => (
+              <Link
+                variant="variant1"
+                color="main"
+                key={label}
+                href={route}
+                underline="none"
+                className="links"
+              >
+                {label}
+              </Link>
             ))}
           </Box>
         </Toolbar>

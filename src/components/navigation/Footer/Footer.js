@@ -4,7 +4,7 @@ import React from 'react'
 import ThemeSwitch from '../../Switch/ThemeSwitch'
 
 const Footer = (props) => {
-  const { change, theme } = props
+  const { change, isDarkTheme } = props
 
   return (
     <Box>
@@ -28,7 +28,9 @@ const Footer = (props) => {
         >
           <BottomNavigationAction
             value="theme"
-            icon={<ThemeSwitch changeTheme={change} isDarkTheme={theme} />}
+            icon={
+              <ThemeSwitch changeTheme={change} isDarkTheme={isDarkTheme} />
+            }
           />
         </BottomNavigation>
       </Paper>
