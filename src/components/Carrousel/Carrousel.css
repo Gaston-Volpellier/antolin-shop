@@ -1,0 +1,20 @@
+.images{
+    height: 400px;
+    display: block;
+    opacity: 0;
+    transition: 1s ;
+}
+
+.loaded{
+    opacity: 1;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px
+}
+
+.margin{
+        margin: 0px 5px
+}

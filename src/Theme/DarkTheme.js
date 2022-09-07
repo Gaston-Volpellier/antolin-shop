@@ -12,6 +12,14 @@ const customDarkTheme = createTheme({
             color: 'white',
           },
         },
+        {
+          props: {
+            variant: 'variant2',
+          },
+          style: {
+            color: 'white',
+          },
+        },
       ],
     },
   },

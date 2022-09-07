@@ -12,6 +12,14 @@ const customLightTheme = createTheme({
             color: 'white',
           },
         },
+        {
+          props: {
+            variant: 'variant2',
+          },
+          style: {
+            color: '#3c3c3c',
+          },
+        },
       ],
     },
   },

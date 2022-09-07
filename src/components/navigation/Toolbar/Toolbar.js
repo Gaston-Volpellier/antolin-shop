@@ -62,8 +62,16 @@ function DrawerAppBar(props) {
       <List>
         {navItems.map(({ label, route }) => (
           <ListItem key={label} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={label} />
+            <ListItemButton sx={{ justifyContent: 'center' }}>
+              <Link
+                variant="variant2"
+                color="main"
+                key={label}
+                href={route}
+                underline="none"
+              >
+                <ListItemText primary={label} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -138,9 +146,7 @@ function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-      </Box>
+      <Toolbar />
     </Box>
   )
 }
