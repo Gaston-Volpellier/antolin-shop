@@ -4,10 +4,11 @@ import Home from './pages/Home/Home'
 import { ThemeProvider } from '@mui/material/styles'
 import { createTheme } from './Theme/index'
 import CssBaseline from '@mui/material/CssBaseline'
-import DrawerAppBar from './components/navigation/Toolbar/Toolbar'
-import Footer from './components/navigation/Footer/Footer'
+import DrawerAppBar from './navigation/Toolbar/Toolbar'
+import Footer from './navigation/Footer/Footer'
 import Profile from './pages/Profile/Profile'
 import { useState } from 'react'
+import { Container } from '@mui/system'
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true)
@@ -27,10 +28,12 @@ const App = () => {
       >
         <CssBaseline />
         <DrawerAppBar isDarkTheme={isDarkTheme} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" exact element={<Profile />} />
-        </Routes>
+        <Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" exact element={<Profile />} />
+          </Routes>
+        </Container>
         <Footer change={changeTheme} isDarkTheme={isDarkTheme} />
       </ThemeProvider>
     </BrowserRouter>

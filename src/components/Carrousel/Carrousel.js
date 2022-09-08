@@ -7,6 +7,7 @@ const Carrousel = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [selectedImage, setSelectedImage] = useState(images[0])
   const [loaded, setLoaded] = useState(false)
+
   useEffect(() => {
     if (autoPlay) {
       const interval = setInterval(() => {

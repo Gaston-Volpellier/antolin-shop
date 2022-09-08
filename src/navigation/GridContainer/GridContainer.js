@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid } from '@mui/material'
 import { Container } from '@mui/system'
-import Card from '../../Card/Card'
+import Card from '../Card/Card'
 
 const GridContainer = (props) => {
   return (
