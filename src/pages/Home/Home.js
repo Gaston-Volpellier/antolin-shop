@@ -7,7 +7,6 @@ const Home = () => {
 
   return (
     <div className="App">
-      {/* <GridContainer /> */}
       <Carrousel images={images} autoPlay={true} />
       <Divider variant="middle" sx={{ m: 4 }} />
     </div>

@@ -9,6 +9,7 @@ import Footer from './navigation/Footer/Footer'
 import Profile from './pages/Profile/Profile'
 import { useState } from 'react'
 import { Container } from '@mui/system'
+import Calendar from './pages/Calendar/Calendar'
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true)
@@ -32,6 +33,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/profile" exact element={<Profile />} />
+            <Route path="/calendar" exact element={<Calendar />} />
           </Routes>
         </Container>
         <Footer change={changeTheme} isDarkTheme={isDarkTheme} />
