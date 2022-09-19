@@ -6,7 +6,7 @@ const ProfileAvatar = () => {
   return (
     <>
       <Avatar
-        imgProps={{ height: 60, width: 60 }}
+        sx={{ height: 80, width: 80 }}
         alt="Avatar alt"
         src="/images/avatar/profile-gaston.jpg"
       />
