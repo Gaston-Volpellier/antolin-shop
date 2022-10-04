@@ -12,9 +12,10 @@ import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
+import { Link } from '@mui/material'
 import Logo from '../../assets/logo.png'
 import LogoWhite from '../../assets/logo-white.png'
-import { Link } from '@mui/material'
+import ThemeSwitch from '../../components/Switch/ThemeSwitch'
 import './Toolbar.css'
 
 const drawerWidth = 240
@@ -39,7 +40,7 @@ const navItems = [
 ]
 
 function DrawerAppBar(props) {
-  const { window, isDarkTheme } = props
+  const { change, window, isDarkTheme } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
@@ -75,6 +76,11 @@ function DrawerAppBar(props) {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem key="themeSwitch" disablePadding>
+          <ListItemButton sx={{ justifyContent: 'center' }}>
+            <ThemeSwitch changeTheme={change} isDarkTheme={isDarkTheme} />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   )
@@ -122,6 +128,9 @@ function DrawerAppBar(props) {
                 {label}
               </Link>
             ))}
+          </Box>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <ThemeSwitch changeTheme={change} isDarkTheme={isDarkTheme} />
           </Box>
         </Toolbar>
       </AppBar>

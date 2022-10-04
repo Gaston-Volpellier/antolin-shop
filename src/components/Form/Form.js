@@ -1,26 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
 import { FormControl, Grid } from '@mui/material'
-import './Form.css'
 import TextField from '@mui/material/TextField'
+import './Form.css'
 import ProfileAvatar from '../Avatar/ProfileAvatar'
+import { useProfileContext } from '../../containers/ProfileContext/ProfileContext'
+import SubmitButton from '../SubmitButton/SubmitButton'
 
 const Form = () => {
-  const [inputInfo, setInputInfo] = useState()
+  const {
+    inputInfo,
+    setInputInfo,
+    handleSubmit,
+    fetchData,
+    loading,
+  } = useProfileContext()
 
   const handleInput = (event) => {
     setInputInfo({ ...inputInfo, [event.target.name]: event.target.value })
   }
 
   useEffect(() => {
-    const fetchData = async () => {
-      await axios
-        .get('/profile-info.php?codigo=164')
-        .then((response) => {
-          setInputInfo(response?.data)
-        })
-        .catch((error) => console.log(error))
-    }
     fetchData()
   }, [])
 
@@ -121,6 +120,11 @@ const Form = () => {
           Mesures
         </Grid>
       </Grid>
+      <SubmitButton
+        buttonText="Guardar Cambios"
+        clickEvent={handleSubmit}
+        loading={loading}
+      />
     </FormControl>
   )
 }

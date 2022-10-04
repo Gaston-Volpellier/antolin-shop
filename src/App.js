@@ -28,7 +28,7 @@ const App = () => {
         }
       >
         <CssBaseline />
-        <DrawerAppBar isDarkTheme={isDarkTheme} />
+        <DrawerAppBar isDarkTheme={isDarkTheme} change={changeTheme} />
         <Container>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -36,7 +36,6 @@ const App = () => {
             <Route path="/calendar" exact element={<Calendar />} />
           </Routes>
         </Container>
-        <Footer change={changeTheme} isDarkTheme={isDarkTheme} />
       </ThemeProvider>
     </BrowserRouter>
   )
